@@ -9,7 +9,7 @@ public class LockerMapDAO implements DAO<Locker, Long>{
 
     private Map<Long, Locker> mapa;
 
-    public LockerMapDAO(){
+    public LockerMapDAO(){//
         mapa = new HashMap<Long, Locker>();
     }
 
