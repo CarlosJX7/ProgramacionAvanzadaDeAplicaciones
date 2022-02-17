@@ -1,5 +1,7 @@
 package paa.locker.persistence;
 
+import java.util.Objects;
+
 public class Locker {
     // Complete siguiendo las instrucciones del enunciado
         private Long code;
@@ -56,56 +58,22 @@ public class Locker {
         public void setCode(Long code) {
             this.code = code;
         }
-        @Override
-        public int hashCode() {
-            final int prime = 31;
-            int result = 1;
-            result = prime * result + ((address == null) ? 0 : address.hashCode());
-            result = prime * result + ((code == null) ? 0 : code.hashCode());
-            result = prime * result + largeCompartments;
-            long temp;
-            temp = Double.doubleToLongBits(latitude);
-            result = prime * result + (int) (temp ^ (temp >>> 32));
-            temp = Double.doubleToLongBits(longitude);
-            result = prime * result + (int) (temp ^ (temp >>> 32));
-            result = prime * result + ((name == null) ? 0 : name.hashCode());
-            result = prime * result + smallCompartments;
-            return result;
-        }
-        @Override
-        public boolean equals(Object obj) {
-            if (this == obj)
-                return true;
-            if (obj == null)
-                return false;
-            if (getClass() != obj.getClass())
-                return false;
-            Locker other = (Locker) obj;
-            if (address == null) {
-                if (other.address != null)
-                    return false;
-            } else if (!address.equals(other.address))
-                return false;
-            if (code == null) {
-                if (other.code != null)
-                    return false;
-            } else if (!code.equals(other.code))
-                return false;
-            if (largeCompartments != other.largeCompartments)
-                return false;
-            if (Double.doubleToLongBits(latitude) != Double.doubleToLongBits(other.latitude))
-                return false;
-            if (Double.doubleToLongBits(longitude) != Double.doubleToLongBits(other.longitude))
-                return false;
-            if (name == null) {
-                if (other.name != null)
-                    return false;
-            } else if (!name.equals(other.name))
-                return false;
-            if (smallCompartments != other.smallCompartments)
-                return false;
-            return true;
-        }
+		@Override
+		public int hashCode() {
+			return Objects.hash(code);
+		}
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			Locker other = (Locker) obj;
+			return Objects.equals(code, other.code);
+		}
 
+        
         
 }

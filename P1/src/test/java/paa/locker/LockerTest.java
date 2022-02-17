@@ -17,4 +17,15 @@ public class LockerTest {
         locker2.setCode(2L);
         assertFalse(locker1.equals(locker2));
     }
+
+    @Test
+    public void testHashCode(){
+        Locker locker1 = new Locker();
+        Locker locker2 = new Locker();
+
+        locker1.setCode(1L);
+        locker2.setCode(1L);
+        assertTrue(locker1.hashCode() == locker2.hashCode());
+
+    }
 }

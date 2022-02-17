@@ -7,5 +7,5 @@ public interface DAO <T,K> {
     List<T> findAll ();
     T create(T t);
     T update(T t);
-    void delete(T t);
+    void delete(T t);//
 }
