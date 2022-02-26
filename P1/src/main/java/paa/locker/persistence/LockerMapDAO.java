@@ -36,6 +36,7 @@ public class LockerMapDAO implements DAO<Locker, Long>{
     */
     @Override
     public Locker create(Locker t) {
+        
         if(!mapa.containsKey(t.getCode())){
             mapa.put(t.getCode(), t);
             return t;  

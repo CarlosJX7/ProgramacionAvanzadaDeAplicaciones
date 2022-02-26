@@ -1,11 +1,10 @@
 package paa.locker;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertSame;
+
+import static org.junit.Assert.*;
 
 import java.util.List;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import paa.locker.persistence.DAOException;
@@ -13,7 +12,6 @@ import paa.locker.persistence.Locker;
 import paa.locker.persistence.LockerMapDAO;
 
 public class MapDAOTest {
-
 
     @Test 
     public void testDelete(){
